@@ -1,74 +1,74 @@
-# Infos Adversaire Chess.com
+# Chess.com Opponent Info
 
-Userscript Tampermonkey/Violentmonkey qui affiche **uniquement les statistiques publiques de ton adversaire** sur Chess.com, via l'API publique officielle (`api.chess.com/pub`). Aucune analyse de coup, aucun engine, aucune triche — **100% fair play**.
+A Tampermonkey/Violentmonkey userscript that displays **only your opponent's public statistics** on Chess.com, using the official public API (`api.chess.com/pub`). No move analysis, no engine, no cheating - **100% fair play**.
 
 ![version](https://img.shields.io/badge/version-1.0-brightgreen)
 ![license](https://img.shields.io/badge/license-MIT-blue)
 
-## Aperçu
+## Overview
 
-Un petit widget flottant (déplaçable) apparaît à côté du joueur du haut. Il montre d'un coup d'œil l'Elo max et le winrate, et déploie un panneau détaillé au clic.
+A small floating (draggable) widget appears next to the top player. It shows the peak Elo and win rate at a glance, and expands into a detailed panel on click.
 
-> 💡 Ajoute un screenshot ici une fois le dépôt en place :
-> `![aperçu](docs/screenshot.png)`
+> Add a screenshot here once the repo is set up:
+> `![preview](docs/screenshot.png)`
 
-## Fonctionnalités
+## Features
 
-- 🏆 **Headline auto** : Elo max global + winrate, sans clic
-- 📊 **Panneau détaillé** : rapide, blitz, bullet, daily, tactiques, puzzle rush
-- 📈 Bilan V/D/N, nombre de parties, winrate combiné
-- 🌍 Pays (drapeau), ancienneté du compte, followers, league
-- 🔴 Détection streamer, badge de titre (GM, IM, FM…)
-- ⛔ Bannière "compte fermé (fair play)" si l'adversaire a été banni
-- 🟢 Dernière connexion (en ligne / il y a X min / h / j)
-- 🖱️ Widget déplaçable et position sauvegardée (localStorage)
+- **Auto headline**: global peak Elo + win rate, no click needed
+- **Detailed panel**: rapid, blitz, bullet, daily, tactics, puzzle rush
+- Win/Loss/Draw record, total games, combined win rate
+- Country (flag), account age, followers, league
+- Streamer detection, title badge (GM, IM, FM...)
+- "Account closed (fair play)" banner if the opponent was banned
+- Last seen (online / X min / h / d ago)
+- Draggable widget with position saved (localStorage)
 
-Le tout repose **exclusivement** sur des données publiques exposées par l'API Chess.com. Rien n'est extrait du plateau ni des coups joués.
+Everything relies **exclusively** on public data exposed by the Chess.com API. Nothing is read from the board or the moves played.
 
 ## Installation
 
-1. Installe une extension userscript :
+1. Install a userscript extension:
    - [Tampermonkey](https://www.tampermonkey.net/) (Chrome, Firefox, Edge, Safari)
-   - ou [Violentmonkey](https://violentmonkey.github.io/) (open source)
-2. Clique sur le lien d'installation directe :
+   - or [Violentmonkey](https://violentmonkey.github.io/) (open source)
+2. Click the direct install link:
 
-   👉 [`chesscom-lichess-analyze.user.js`](https://raw.githubusercontent.com/lusowall/info-chesscom/main/chesscom-lichess-analyze.user.js)
+   [`chesscom-lichess-analyze.user.js`](https://raw.githubusercontent.com/lusowall/info-chesscom/main/chesscom-lichess-analyze.user.js)
 
-3. L'extension détecte le script et propose l'installation. Valide.
-4. Lance une partie sur Chess.com, le widget apparaît en haut à gauche.
+3. The extension detects the script and prompts for installation. Confirm.
+4. Start a game on Chess.com; the widget appears in the top-left corner.
 
-> Les mises à jour sont gérées automatiquement par Tampermonkey via `@updateURL`.
+> Updates are handled automatically by Tampermonkey via `@updateURL`.
 
-## Utilisation
+## Usage
 
-- Le bandeau 🏆 se remplit tout seul quand un adversaire est détecté.
-- **Clic sur 📊 ou sur le bandeau** → ouvre/ferme le panneau détaillé.
-- **Clic sur 📌** → débloque le widget pour le déplacer, reclique pour le fixer (📌 ↔ ✋).
-- La position est mémorisée entre les sessions.
+- The headline fills in automatically once an opponent is detected.
+- **Click the icon or the headline** to open/close the detailed panel.
+- **Click the pin button** to unlock the widget for dragging; click again to fix it in place.
+- The position is remembered across sessions.
 
-## Compatibilité
+## Compatibility
 
-| Page                          | Supporté |
-|-------------------------------|----------|
-| `chess.com/game/*`            | ✅        |
-| `chess.com/play/*`            | ✅        |
+| Page                          | Supported |
+|-------------------------------|-----------|
+| `chess.com/game/*`            | Yes       |
+| `chess.com/play/*`            | Yes       |
 
-## Confidentialité & fair play
+## Privacy & fair play
 
-Ce script **ne fournit aucune assistance au jeu**. Il ne lit pas la position, ne suggère pas de coups et n'utilise aucun moteur d'échecs. Il se contente d'agréger les statistiques publiques du profil adverse, exactement comme si tu allais voir son profil à la main. C'est conforme à la philosophie fair play de Chess.com.
+This script **provides no gameplay assistance**. It does not read the position, does not suggest moves, and uses no chess engine. It simply aggregates the opponent's public profile statistics, exactly as if you visited their profile manually. This is consistent with Chess.com's fair play policy.
 
-## Développement
+## Development
 
-Le script est un fichier unique sans build :
+The script is a single file with no build step:
 
 ```
-chesscom-lichess-analyze.user.js   # tout le code
+chesscom-lichess-analyze.user.js   # all the code
 README.md
 LICENSE
 ```
 
-Pour contribuer : fork → branche → PR. Les retours bugs vont dans les [issues](https://github.com/lusowall/info-chesscom/issues).
+To contribute: fork -> branch -> PR. Bug reports go in the [issues](https://github.com/lusowall/info-chesscom/issues).
 
-## Licence
+## License
 
-[MIT](LICENSE) © LusoWall
+[MIT](LICENSE) (c) LusoWall
